@@ -43,6 +43,9 @@ public class HistoryJsonChatParser {
                 } else {
                     text = msg.get("text").asText();
                 }
+                if (text.startsWith("!maga") || text.startsWith("!MAGA")) {
+                    continue;
+                }
                 symbols = text.replaceAll("\\s", "").length();
             }
             else if (msg.has("media_type")
