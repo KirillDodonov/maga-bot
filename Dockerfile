@@ -13,5 +13,5 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 # Копируем готовый jar из предыдущего этапа (поменяйте имя файла, если оно отличается)
-COPY --from=build /app/target/MagaTariffBot-0.0.1-SNAPSHOT.jar .
-CMD ["java", "-jar", "maga-bot.jar"]
+COPY --from=build /app/target/MagaTariffBot-0.0.1-SNAPSHOT.jar.jar .
+CMD ["java", "-jar", "MagaTariffBot-0.0.1-SNAPSHOT.jar"]
